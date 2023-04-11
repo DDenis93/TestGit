@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список товаров</title>
+</head>
+<!--ниже цикл-->
+<body>
+<div th:each="product : ${product}">
+    <!--динамические переменные товаров-->
+    <a th:href="@{/product/{id}(id=${product.getId()})}" th:text="${product.getName()}"></a>
+</div>
+<button><a href="/product/add">Добавление товара</a></button>
+</body>
+</html>
